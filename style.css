@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+body{
+    background: #000;
+    color: var(--dt-text-muted);
+}
+.github-wrapper{
+    height: 100%;
+    width: 100%;
+}
+.github-wrapper .search-wrapper{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #101010;
+}
+.github-wrapper .search-wrapper form{
+    height: 55px;
+    width: 80%;
+    position: relative;
+}
+:focus{
+    outline: none;
+}
+.github-wrapper .search-wrapper form input{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #151515;
+    border: 1px solid #292929;
+    padding-left: 50px;
+    padding-right: 20px;
+    color: #818080;
+}
+.github-wrapper .search-wrapper form .pull{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 5;
+    padding: 10px 10px;
+    color: #0095E8;
+    background: var(--dt-primary-light);
+    font-family: var(--fw-josefin);
+    border: none;
+}
+.github-wrapper .search-wrapper form .icon{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    z-index: 5;
+    cursor: pointer;
+    border-right: 1px solid #292929;
+    padding-right: 10px;
+}
+.github-wrapper .search-wrapper form .icon svg{
+    vertical-align: bottom;
+    transition: all .3s;
+}
+.github-wrapper .search-wrapper form .icon:hover svg{
+    fill: #bfbfbf;
+}
+
+
+
+
+.result-wrapper{
+    height: 100%;
+    width: 100%;
+}
+.result-wrapper .result{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: #bfbfbf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.result .notice{
+    padding: 10px;
+    width: 57%;
+    display: flex;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: var(--dt-danger);
+    background: var(--dt-danger-light);
+}
+
+
+.result-wrapper .result .card{
+    background: #151515;
+    width: 450px;
+    height: auto;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #292929;
+}
+
+.result-wrapper .result .card .row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.card .row .profile{
+    height: 85px;
+    width: 85px;
+    background: #131628;
+    border: 5px solid #292929;
+    border-radius: 50%;
+    position: relative;
+}
+.card .row .profile .type{
+    position: absolute;
+    top: 80%;
+    right: 0%;
+    font-size: 8px;
+    font-family: 'Fredoka';
+    font-weight: 900;
+    color: green;
+    border-radius: 4px;
+    background: rgb(28, 41, 28);
+    padding: 2px 4px;
+}
+.card .row .basic-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.card .row .basic-info .name{
+    font-family: 'Fredoka';
+}
+.card .row .basic-info .username a{
+    color: #0095E8;
+}
+.card .row .basic-info .username,
+.card .row .basic-info .bio{
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 3px;
+}
+.card .row .basic-info .bio{
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.card .row:nth-child(2){
+    border-top: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0!important;
+}
+.card .row:nth-child(2) .col{
+    background: #252525b6;
+    height: 100%;
+    padding: 4px;
+    width: 33.33%;
+}
+.card .row .col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.card .row:nth-child(2) .col:nth-child(2),
+.card .row:nth-child(2) .col:nth-child(3){
+    border-left: 1px solid #292929;
+    border-right: 1px solid #292929;
+}
+.card .row:nth-child(2) .col span{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.card .row:nth-child(2) .col span:nth-child(1){
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+.card .row:nth-child(3){
+    display: flex;
+    flex-wrap: wrap;
+}
+.card .row:nth-child(3) .repository a{
+    text-decoration: none;
+    color: #0095E8;
+    margin-right: 10px;
+    transition: all .3s;
+}
+.card .row:nth-child(3) .repository a:hover{
+    color: var(--dt-text-muted);
+}
+
+
+:root{
+    --fw-josefin: 'Josefin Sans', sans-serif;
+    --fw-fredoka: 'Fredoka';
+    --lt-body-bg: #F5F8FA; 
+    --lt-text-muted: #A1A5B7;
+    --lt-text-gray-300: #E1E3EA;
+    --lt-text-gray-400: #B5B5C3;
+    --lt-text-gray-500: #A1A5B7;
+    --lt-text-gray-600: #7E8299;
+    --lt-text-gray-700: #5E6278;
+    --lt-text-gray-800: #3F4254;
+    --lt-text-gray-900: #181C32;
+
+    --lt-primary: #7239EA;
+    --lt-secondary: #1142f3;
+    --lt-success: #50CD89;
+    --lt-info: #009EF7;
+    --lt-warning: #FFC700;
+    --lt-danger: #F1416C;
+    --lt-dark: #181C32;
+
+    --lt-primary-active: #5014D0;
+    --lt-secondary-active: #B5B5C3;
+    --lt-light-active: #F4F4F4;
+    --lt-success-active: #47BE7D;
+    --lt-info-active: #0095E8;
+    --lt-warning-active: #F1BC00;
+    --lt-danger-active: #D9214E;
+    --lt-dark-active: #131628;
+
+    --lt-primary-light: #e5ddfa;
+    --lt-secondary-light: #fadada;
+    --lt-success-light: #d1f8e3;
+    --lt-info-light: #cae8f8;
+    --lt-warning-light: #fdf5d3;
+    --lt-danger-light: #ffdae5;
+    --lt-dark-light: #c5c3c3;
+
+    --lt-box-shadow-1: -1px 2px 3px rgba(0, 0, 0, 0.05);
+    --lt-box-shadow-xs: 0 0.1rem 0.75rem 0.25rem rgba(0, 0, 0, 0.05);
+    --lt-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgba(0, 0, 0, 0.05);
+    --lt-code-box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.08);
+    --lt-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+    --lt-box-shadow-lg: 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+    --lt-tooltip-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    --lt-card-box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02);
+
+    --dt-text-muted: #565674;
+    --dt-body-bg: #101010;
+    --dt-light: #2B2B40;
+
+    --dt-primary: #7239EA;
+    --dt-secondary: #323248;
+    --dt-success: #50CD89;
+    --dt-info: #009EF7;
+    --dt-warning: #FFC700;
+    --dt-danger: #F1416C;
+    --dt-dark: #FFFFFF;
+
+    --dt-primary-active: #5014D0;
+    --dt-secondary-active: #474761;
+    --dt-light-active: #323248;
+    --dt-success-active: #47BE7D;
+    --dt-info-active: #0095E8;
+    --dt-warning-active: #F1BC00;
+    --dt-danger-active: #D9214E;
+    --dt-dark-active: white;
+
+    --dt-primary-light: #211b36;
+    --dt-success-light: #1C3238;
+    --dt-info-light: #192235;
+    --dt-warning-light: #302218;
+    --dt-danger-light: #2e1728;
+    --dt-dark-light: #242435;
+    --dt-secondary-light: #1b1b29;
+
+    --dt-text-gray-200: #2B2B40;
+    --dt-text-gray-300: #323248;
+    --dt-text-gray-400: #474761;
+    --dt-text-gray-500: #565674;
+    --dt-text-gray-600: #6D6D80;
+    --dt-text-gray-700: #92929F;
+    --dt-text-gray-800: #CDCDDE;
+    --dt-text-gray-900: #FFFFFF;
+
+    --dt-box-shadow-xs: 0 0.1rem 0.75rem 0.25rem rgba(0, 0, 0, 0.05);
+    --dt-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgba(0, 0, 0, 0.05);
+    --dt-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+    --dt-box-shadow-lg: 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+    --dt-tooltip-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+}
