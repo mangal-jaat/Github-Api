@@ -209,15 +209,30 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
-.card .row:nth-child(3) .repository a{
+
+.card .row:nth-child(3) .repository {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 4px 18px;
+}
+.card .row .repository a{
+    display: inline-flex;
     text-decoration: none;
-    color: #0095E8;
-    margin-right: 10px;
+    color: #009EF7;
     transition: all .3s;
+    background: #242424;
+    text-transform: capitalize;
+    font-family: 'Fredoka';
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 4px 7px;
 }
-.card .row:nth-child(3) .repository a:hover{
-    color: var(--dt-text-muted);
+.card .row .repository a:hover{
+    color: #131628;
 }
+
 
 
 :root{
