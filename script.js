@@ -40,17 +40,18 @@ const printCard = (data) => {
         <span>Gists</span>
     </div>
    </div>
+   
+   /* row for repos link */
+   <div class="row">
+     <div class="repository">
+     </div>
+    </div>
    `)
    const repo = `https://api.github.com/users/${search.value}/repos`
    $.getJSON(repo, function(json){
     repositories = json;   
     $.each(repositories, function(index) {
-    $(card).append(`
-    <div class="row">
-     <div class="repository">
-        <a href="${repositories[index].html_url}">${repositories[index].name}</a>
-    </div>
-    </div>`)    
+    $(card).append(`<a href="${repositories[index].html_url}">${repositories[index].name}</a>`)    
     })  
    });
     $('.result').html(card);
