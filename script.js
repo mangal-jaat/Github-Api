@@ -1,18 +1,50 @@
+// html selectors define as variable
 const form = document.querySelector(".form");
 const search = document.querySelector(".search");
+const result = document.querySelector(".result");
 
-const FetchGit = async () => {
-    const user = `https://api.github.com/users/${search.value}`;
-    const reponse = await fetch(user);
-    const data = await reponse.json();
-    return data;
+/// api url 
+const endpoint = "https://api.github.com/users/";
+
+// Get Github User 
+const fetchGithub = async (query) => {
+    try{
+        const {data} = await axios(endpoint + query);
+        GenerateCard(data);
+        GetRepository(query);
+        GetFollowers(query);
+    } catch (error) {
+		if (error.response.status == 404) {
+			errorMsg("No user matches your search. Please check username again");
+		}
+	}
 }
-FetchGit().then(data => {printCard(data);})
 
-const printCard = (data) => {
-    var card = document.createElement("div");
-    card.className = "card";
-    $(card).append(`
+/// Get User Repository
+const GetRepository = async (query) => {
+    try {
+		const { data } = await axios(endpoint + query + "/repos?sort=created");
+		createRepoElement(data);
+	} catch (error) {
+		errorMsg("problem loading repositories");
+	}
+}
+
+// get followers 
+const GetFollowers = async (query) => {
+    try{
+        const {data} = await axios(endpoint + query + "/followers");
+        createFollowersEl(data)
+    } catch (error) {
+		errorMsg("problem loading repositories");
+	}
+}
+/// Make Github User Card
+const GenerateCard = (data) => {
+   // result.innerHTML = JSON.stringify(data)
+    result.insertAdjacentHTML("beforeend",`
+    <div class="card">
+
     <div class="row">
        <div class="profile" style="background-image: url(${data.avatar_url});background-size:cover;"><span class="type">${data.type}</span></div>
        <div class="basic-info">
@@ -37,34 +69,55 @@ const printCard = (data) => {
     </div>
     <div class="repo col">
         <span class="repo-count">${data.public_repos}</span>
-        <span>Gists</span>
+        <span>Repo</span>
     </div>
    </div>
-   
-   /* row for repos link */
+   <div class="row">
+     <div class="followers-user">
+     </div>
+    </div>
    <div class="row">
      <div class="repository">
      </div>
     </div>
-   `)
-   const repo = `https://api.github.com/users/${search.value}/repos`
-   $.getJSON(repo, function(json){
-    repositories = json;   
-    $.each(repositories, function(index) {
-    $(card).append(`<a href="${repositories[index].html_url}">${repositories[index].name}</a>`)    
-    })  
-   });
-    $('.result').html(card);
+
+    </div>`)
 }
 
-$('.search').on('keyup', function(e){
+// error messages
+function errorMsg(message) {
+	const errorCard = `
+    <div>
+        <p>${message}</p>
+    </div>`;
+	result.innerHTML = errorCard;
+}
+
+// Dom Content Loaded Show Item
+fetchGithub(search.value)
+
+// repository element
+const createRepoElement = (repos) => {
+	const reposEl = document.querySelector(".row .repository");
+	repos.forEach((repo) => {
+		reposEl.insertAdjacentHTML("beforeend",
+        `<a href="${repo.html_url}">${repo.name}</a>`)
+	});
+}
+
+const createFollowersEl = (follower) => {
+    const followerEl = document.querySelector(".row .followers-user");
+    follower.forEach((follow) => {
+		followerEl.insertAdjacentHTML("beforeend",
+        `<div class="user" data-name="${follow.login}" style="background-image: url(${follow.avatar_url});background-size:cover;"></div>`)
+	});
+}
+
+search.addEventListener("keyup",function(e){
+    result.innerHTML = "";
     e.preventDefault();
-    $(".result").empty();
-    FetchGit().then(data => {printCard(data);})
-})
-/* or form submit
-$('.form').on('submit', function(e){
-    e.preventDefault();
-    $(".result").empty();
-    FetchGit().then(data => {printCard(data);})
+    const query = search.value;
+    if(query){
+        fetchGithub(query)
+    }
 })
