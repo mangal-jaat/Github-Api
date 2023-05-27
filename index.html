@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="github-wrapper">
+<section>
+    <div class="wrapper">
+        <h3 class="toggler ">
+            Resources 
+            <strong class="resourcesLabel">URL</strong> 
+            <strong class="resourcesLabel">cdnjs</strong>
+        </h3>
 
-        <h2 class="title">Get Git<span>hub</span>&nbsp;User Card</h2>
-        <div class="search-wrapper">
-            <form class="form">
-                <div class="icon"><svg fill="#565674" width="22px" height="22px" viewBox="0 0 0.66 0.66" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M0.33 0.062a0.275 0.275 0 0 0 -0.087 0.536c0.014 0.002 0.019 -0.006 0.019 -0.013 0 -0.007 0 -0.028 0 -0.051 -0.069 0.013 -0.087 -0.017 -0.092 -0.032a0.1 0.1 0 0 0 -0.028 -0.039c-0.01 -0.005 -0.023 -0.018 0 -0.018a0.055 0.055 0 0 1 0.042 0.028 0.059 0.059 0 0 0 0.08 0.023 0.058 0.058 0 0 1 0.018 -0.037c-0.061 -0.007 -0.125 -0.031 -0.125 -0.136a0.107 0.107 0 0 1 0.028 -0.074 0.099 0.099 0 0 1 0.003 -0.073s0.023 -0.007 0.076 0.028a0.259 0.259 0 0 1 0.138 0c0.053 -0.036 0.076 -0.028 0.076 -0.028a0.099 0.099 0 0 1 0.003 0.073 0.106 0.106 0 0 1 0.028 0.074c0 0.106 -0.064 0.129 -0.125 0.136a0.065 0.065 0 0 1 0.019 0.051c0 0.037 0 0.066 0 0.076 0 0.007 0.005 0.016 0.019 0.013A0.275 0.275 0 0 0 0.33 0.062Z"/></svg></div>
-                <input value="bootstrap" type="search" class="search" placeholder="search">
-            </form>
-        </div>
-    
-        
-        <div class="result-wrapper">
-            <div class="result">
-                
-            </div>
-        </div>
-        
-    
+        <form class="form" id="external-resources-form">
+            <input value="jquery" class="search" id="input_external_resource" type="text" name="q" value="" placeholder="JavaScript/CSS URL" autocomplete="off">
+            <a class="submit" id="add_external_resource" href="javascript:void(0)" title="Add resource">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="slategrey" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </a>
+        </form>
+
     </div>
-
-
-<div class="stars" aria-hidden="true"></div>
-<div class="starts2" aria-hidden="true"></div>
-<div class="stars3" aria-hidden="true"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="script.js"></script>
+</section>
+<span class="demo">
+    <style>
+        @font-face {
+            font-family: icon;
+            src: url("Assets/Plugins/icofont/fonts/icofont.ttf") format("embedded-opentype"),
+            url("Assets/Plugins/icofont/fonts/icofont.ttf") format("truetype"),
+            url("Assets/Plugins/icofont/fonts/icofont.woff") format("woff"),
+            url("Assets/Plugins/icofont/fonts/icofont.woff2") format("woff2"),
+            url("Assets/Plugins/icofont/fonts/icofont.ttf") format("svg")
+        }
+        .demo::after{
+            content: "\ec3e";
+            font-family: icon;
+        }
+        </style>
+</span>
+<section class="result-wrapper">
+    <main class="git-result">
+        
+    </main>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
